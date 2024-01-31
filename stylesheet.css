@@ -10,9 +10,11 @@ button{
     margin: 5px;   
 }
 
-.grid{
-    background-color: aqua;
-    width: 100%;
+#grid{
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    flex: 1, 1, 0;
 }
 
 .line{
@@ -21,13 +23,13 @@ button{
     align-items: center;
     justify-content: center;
     flex: 1 1 0;
-    width: 100%;
-    height: 100%;
 }
 
 .item{
     display: flex;
-    flex: 1 0 auto;
+    align-items: stretch;
+    justify-content: stretch;
+    flex: 1;
     background-color: rgb(55, 214, 55);
     border: 1px solid black;
     min-height: 10px;

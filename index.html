@@ -4,15 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="stylesheet.css" />
-    <!--<script src="script.js"></script>-->
+    <!--<script src="./script.js"></script>-->
     <title>Etchy</title>
   </head>
   <body>
     <button class="gridButt">New Grid?</button>
-    <div class="grid"></div>
+    <div id="grid"></div>
 
     <script>
-      let grid = document.querySelector(".grid");
+      let grid = document.querySelector("#grid");
       let butt = document.querySelector("button");
       let line = document.querySelectorAll(".line");
       let item = document.querySelectorAll(".item");
@@ -35,7 +35,8 @@
       }
 
       function getUserNum() {
-        var userNum = prompt("How many blocks we doin?", 16);
+        grid.innerHTML = '';
+        let userNum = prompt("How many blocks we doin?", 16);
         if (userNum > 100 || userNum < 2) {
           getUserNum();
         }
@@ -43,7 +44,15 @@
         buildGrid(gridNum);
       }
 
-      window.onload = buildGrid(gridNum);
+
+      function setHeight(){
+        let divWidth = grid.offsetWidth;
+        grid.setAttribute("style", `height:${divWidth}px`);
+      }
+
+      setHeight();
+      buildGrid(gridNum);
+      
 
       butt.addEventListener("click", () => {
         getUserNum();
