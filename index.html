@@ -3,67 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="stylesheet.css" />
-    <!--<script src="./script.js"></script>-->
+    <link rel="stylesheet" href="stylesheet.css"/>
+    <script src="script.js" type="text/javascript" defer></script>
     <title>Etchy</title>
   </head>
   <body>
-    <button class="gridButt">New Grid?</button>
-    <div id="grid"></div>
+    <div id="button-div"><button class="gridButt">New Grid?</button></div>
+    <div id="grid" class="grid"
+    ></div>
 
-    <script>
-      let grid = document.querySelector("#grid");
-      let butt = document.querySelector("button");
-      let line = document.querySelectorAll(".line");
-      let item = document.querySelectorAll(".item");
-
-      let gridNum = 16;
-
-      function buildGrid(gridNum) {
-        for (let i = 0; i < gridNum; i++) {
-          let newRow = document.createElement("div");
-          newRow.className = "line";
-          grid.appendChild(newRow);
-
-          for (let j = 0; j < gridNum; j++) {
-            let newItem = document.createElement("div");
-            newItem.className = "item";
-            /*newItem.style.height = (750/gridNum)*/
-            newRow.appendChild(newItem);
-          }
-        }
-      }
-
-      function getUserNum() {
-        grid.innerHTML = '';
-        let userNum = prompt("How many blocks we doin?", 16);
-        if (userNum > 100 || userNum < 2) {
-          getUserNum();
-        }
-        gridNum = userNum;
-        buildGrid(gridNum);
-      }
-
-
-      function setHeight(){
-        let divWidth = grid.offsetWidth;
-        grid.setAttribute("style", `height:${divWidth}px`);
-      }
-
-      setHeight();
-      buildGrid(gridNum);
-      
-
-      butt.addEventListener("click", () => {
-        getUserNum();
-      });
-
-      
-        for (let i = 0; i < item.length; i++){
-            item[i].style.backgroundColor = "red";
-        }
-    
-      
-    </script>
   </body>
 </html>

@@ -1,42 +1,23 @@
-body{
+#button-div{
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    background-color: aqua;
-}
-
-button{
-    margin: 5px;   
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 #grid{
     display: flex;
-    flex-direction: column;
+    margin: 0 auto;
+    background-color: aqua;
     width: 80vw;
-    flex: 1, 1, 0;
-}
-
-.line{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    flex: 1 1 0;
+    flex-wrap: wrap;
 }
 
 .item{
-    display: flex;
-    align-items: stretch;
-    justify-content: stretch;
-    flex: 1;
-    background-color: rgb(55, 214, 55);
-    border: 1px solid black;
-    min-height: 10px;
-    min-width: 10px;
+    background-color: blueviolet;
+    box-sizing: border-box;
+    border: 1px black solid;
+    height: 16px;
+    width: 16px;
 
 }
-
-.itemTouch{
-    background-color: blueviolet;
-} 
