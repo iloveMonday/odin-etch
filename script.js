@@ -1,6 +1,8 @@
 let grid = document.getElementById("grid");
-let butt = document.querySelector("button");
+let resize = document.getElementById("grid-butt");
+let reset = document.getElementById("reset-butt");
 let item = document.querySelectorAll(".item");
+
 
 let gridNum = 16;
 
@@ -20,17 +22,23 @@ function buildGrid(gridNum) {
 
 buildGrid(gridNum);
 
+
 function getUserNum() {
   grid.innerHTML = "";
-  let userNum = prompt("How many blocks we doin?", 16);
-  if (userNum > 100 || userNum < 2) {
+  let userNum = prompt("How many blocks we doin? (2-99)", 16);
+  if (userNum > 100 || userNum < 2 || isNaN(userNum)) {
     getUserNum();
   }
   buildGrid(userNum);
 }
 
-butt.addEventListener("click", () => {
+resize.addEventListener("click", () => {
   getUserNum();
+});
+
+reset.addEventListener("click", () =>{
+  grid.innerHTML = "";
+  buildGrid(gridNum);
 });
 
 grid.onmouseover = (e) => {

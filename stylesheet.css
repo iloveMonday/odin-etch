@@ -2,11 +2,20 @@ body{
     background-color: rgb(90, 201, 90);
 }
 
+button{
+    margin-left: 5px;
+    margin-right: 5px;
+    border-color: blueviolet;
+    color: blueviolet;
+    background-color: aqua;
+}
+
 #button-div{
     display: flex;
     justify-content: center;
     margin-top: 10px;
     margin-bottom: 10px;
+    flex-wrap: wrap;
 }
 
 #grid{
