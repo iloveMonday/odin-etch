@@ -2,6 +2,9 @@ let grid = document.getElementById("grid");
 let resize = document.getElementById("grid-butt");
 let reset = document.getElementById("reset-butt");
 let item = document.querySelectorAll(".item");
+let bw = document.querySelector("#bw");
+let fun = document.querySelector("#fun");
+let eraser = document.querySelector("#eraser");
 
 
 let gridNum = 16;
@@ -32,6 +35,15 @@ function getUserNum() {
   buildGrid(userNum);
 }
 
+function randomColor(){
+  let letters='0123456789ABCDEF'
+  let color='#'
+  for(let i=0; i<6 ; i++){
+      color+=letters[Math.floor(Math.random()*16)]
+  }
+  return color
+}
+
 resize.addEventListener("click", () => {
   getUserNum();
 });
@@ -41,8 +53,34 @@ reset.addEventListener("click", () =>{
   buildGrid(gridNum);
 });
 
-grid.onmouseover = (e) => {
-  e.target.style.backgroundColor = "black";
+bw.addEventListener("click", () =>{
+  fun.style.backgroundColor = "aqua";
+  bw.style.backgroundColor = "blue";
+  eraser.style.backgroundColor = "aqua"
+  grid.onmouseover = (e) => {
+    e.target.style.backgroundColor = "black";
+  }
+});
+
+fun.addEventListener("click", () =>{
+  fun.style.backgroundColor = "blue";
+  bw.style.backgroundColor = "aqua";
+  eraser.style.backgroundColor = "aqua"
+  grid.onmouseover = (e) => {
+    e.target.style.backgroundColor = randomColor();
+}}
+);
+
+eraser.addEventListener("click", () =>{
+  fun.style.backgroundColor = "aqua";
+  bw.style.backgroundColor = "aqua";
+  eraser.style.backgroundColor = "blue"
+  grid.onmouseover = (e) => {
+    e.target.style.backgroundColor = "blueviolet";
+}}
+);
+
+
 
   //  (e.target.style.backgroundColor = "black");
 
@@ -56,7 +94,7 @@ grid.onmouseover = (e) => {
   //    (e.target.style.opacity = 0.1);
 
   //  console.log(e.target.style.opacity);
-};
+
 // newBox.onMouseOver = (e) => changeColor(e);
 // function changeColor(event){
 //   event.target.style.background-color; "red";

@@ -10,12 +10,13 @@ button{
     background-color: aqua;
 }
 
-#button-div{
+.button-div{
     display: flex;
     justify-content: center;
     margin-top: 10px;
     margin-bottom: 10px;
     flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 #grid{
