@@ -1,3 +1,7 @@
+body{
+    background-color: rgb(90, 201, 90);
+}
+
 #button-div{
     display: flex;
     justify-content: center;
@@ -10,13 +14,16 @@
     margin: 0 auto;
     background-color: aqua;
     width: 80vw;
+    height: 80vw;
+    max-height: 90vh;
+    max-width: 90vh;
     flex-wrap: wrap;
 }
 
 .item{
     background-color: blueviolet;
     box-sizing: border-box;
-    border: 1px black solid;
+    border: 0.5px black solid;
     height: 16px;
     width: 16px;
 
